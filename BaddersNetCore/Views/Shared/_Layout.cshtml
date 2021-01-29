@@ -1,0 +1,67 @@
+﻿@inject BaddersNetCore.Models.ILatestResults CachedViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angel Centre Badminton Club</title>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/menu.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <!--[if lt IE 7]> <link href="stylesIE6andBelow.css" rel="stylesheet" type="text/css"> <![endif]-->
+</head>
+<body>
+    <div>
+        <div id="header" style="height: 120px">
+            <div style="float: left; padding: 10px;">
+                <img src="~/images/ACBC logo.jpg" height="93">
+            </div>
+            <div class="content">
+                <!--
+                <h1>CSS play - SIMPLE Flexible Layout - 3 columns two fixed widths</h1>
+                <p>Resize you browser window and watch it stay in shape. NO graphics have been used in this demonstration (except for the 'Donate' button).</p>
+                -->
+                <p class="centredImage">
+                    <img src="~/images/title.jpg" alt="main image" />
+                </p>
+            </div>
+        </div>
+        <!-- end header -->
+        <div id="wrapper">
+            <div id="outer1">
+                <div id="menuMain">
+                    <ul>
+                        <li id="mnu_Home"><a asp-controller="Home" asp-action="Index" title="Angel Centre Badminton Club">Home</a></li>
+                        <li id="mnu_OurFriends"><a asp-controller="Home" asp-action="OurFriends" title="Our Friends">Our Friends</a></li>
+                        <li id="mnu_Fixtures"><a asp-controller="Home" asp-action="Fixtures" title="Fixture list">Fixtures</a></li>
+                        <li id="mnu_Gallery"><a asp-controller="Home" asp-action="Gallery" title="Gallery">Gallery</a></li>
+                        <li id="mnu_Contact"><a asp-controller="Home" asp-action="BadmintonContact" title="Contact">Contact</a></li>
+                        <li id="mnu_NoticesAndNews"><a asp-controller="Home" asp-action="NoticesAndNews" title="Notices And News">Notices And News</a></li>
+                        <li id="mnu_UsefulLinks"><a asp-controller="Home" asp-action="UsefulLinks" title="Useful Links">Useful Links</a></li>
+                    </ul>
+                </div>
+                <a href="http://www.badmintonengland.co.uk/homepage.asp">
+                    <img src="~/images/affiliated_club.jpg" style="margin: 10px 0px" />
+                </a>
+                <a href="https://www.facebook.com/angelcentrebc">
+                    <img src="~/images/facebook.jpg" />
+                </a>
+            </div>
+            <div id="outer2">
+                <main role="main">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+        <!-- end #wrapper -->
+        <div id="footer">
+            <div>
+                Site designed by
+                <a href="http://www.bbcmicrogames.com/screenshots/repton11.gif" target="_blank">Lizard</a>
+                @Html.Raw(@CachedViewModel.LatestResults)
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+
+</body>
+</html>
