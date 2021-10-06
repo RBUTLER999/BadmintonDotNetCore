@@ -1,0 +1,14 @@
+﻿[Unit]
+Description=BaddersNetCore Website
+After=network.target
+
+[Service]
+ExecStart=/home/pi/.dotnet/dotnet BaddersNetCore.dll --urls http://0.0.0.0:5000/
+WorkingDirectory=/home/pi/BaddersNetCore
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
